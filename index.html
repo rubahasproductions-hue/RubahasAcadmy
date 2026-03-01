@@ -1,0 +1,2463 @@
+﻿<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubaha's Academy | رباحاز اکیڈمی</title>
+    <meta name="description"
+        content="رباحاز اکیڈمی: قرآنی تعلیمات، اردو ادب اور جدید ڈیجیٹل مہارتیں سیکھنے کا بہترین ادارہ۔">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons for elegant vectors -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            try {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'ur',
+                    includedLanguages: 'ur,en,ar,fa,es,pa,fr',
+                    autoDisplay: false
+                }, 'google_translate_element');
+
+                // Fallback for local files: Try to trigger saved language
+                const savedLang = localStorage.getItem('selectedLang');
+                if (savedLang && savedLang !== 'ur') {
+                    let attempts = 0;
+                    const checkWidget = setInterval(() => {
+                        const gtSelect = document.querySelector('.goog-te-combo');
+                        if (gtSelect) {
+                            gtSelect.value = savedLang;
+                            gtSelect.dispatchEvent(new Event('change'));
+                            clearInterval(checkWidget);
+                        }
+                        if (attempts++ > 20) clearInterval(checkWidget);
+                    }, 500);
+                }
+            } catch (err) {
+                console.warn("Google Translate Error:", err);
+            }
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <style>
+/* --- Variables & Reset --- */
+@font-face {
+    font-family: 'Jameel Noori Nastaleeq';
+    src: url('https://cdn.rawgit.com/musharrafayub/nafees-urdu/master/Jameel%20Noori%20Nastaleeq.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* Light Theme Variables */
+    --color-primary: #0A3A40;
+    /* Deep Teal */
+    --color-primary-light: #125760;
+    --color-primary-lightest: rgba(10, 58, 64, 0.05);
+    --color-accent: #D4AF37;
+    /* Gold */
+    --color-accent-hover: #b8972f;
+    --color-text-main: #333333;
+    --color-text-muted: #666666;
+    --color-bg-main: #FAFAFA;
+    --color-bg-white: #FFFFFF;
+    --color-border: rgba(0, 0, 0, 0.1);
+
+    --font-urdu: 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', system-ui, sans-serif;
+    --font-en: 'Inter', system-ui, sans-serif;
+
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+    --border-radius: 12px;
+}
+
+/* Dark Theme Variables */
+body.dark-mode {
+    --color-primary: #1a1a1a;
+    --color-primary-light: #2d2d2d;
+    --color-primary-lightest: rgba(255, 255, 255, 0.05);
+    --color-text-main: #f0f0f0;
+    --color-text-muted: #a0a0a0;
+    --color-bg-main: #121212;
+    --color-bg-white: #1e1e1e;
+    --color-border: rgba(255, 255, 255, 0.1);
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-urdu);
+    color: var(--color-text-main);
+    background-color: var(--color-bg-main);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+.en-font {
+    font-family: var(--font-en);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-normal);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    padding: 0.75rem 1.75rem;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-accent), #e3c45b);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-accent-hover), var(--color-accent));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.btn-outline:hover {
+    background: var(--color-accent);
+    color: #fff;
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* Layout Utilities */
+.section {
+    padding: 5rem 0;
+}
+
+.bg-light {
+    background-color: var(--color-bg-white);
+}
+
+.bg-teal-light {
+    background-color: var(--color-primary-lightest);
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.divider {
+    height: 3px;
+    width: 60px;
+    background-color: var(--color-accent);
+    margin: 0 auto 2rem;
+    border-radius: 3px;
+}
+
+/* --- Components --- */
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.25rem 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 0.75rem 0;
+    box-shadow: var(--shadow-md);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.logo-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.logo-text-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--color-primary);
+}
+
+.logo-text-ur {
+    font-family: var(--font-urdu);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    margin-top: 2px;
+}
+
+.logo span {
+    color: var(--color-accent);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    transition: var(--transition-short);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+.nav-links a:not(.btn-outline)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: var(--transition-short);
+}
+
+.nav-links a:not(.btn-outline):hover::after {
+    width: 100%;
+}
+
+.nav-links .btn-outline {
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    border-width: 2px;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    display: flex;
+}
+
+.social-icon:hover {
+    color: var(--color-accent);
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Custom Translator Dropdown */
+.custom-translate {
+    position: relative;
+    display: inline-block;
+}
+
+.translate-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--color-border);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: var(--color-primary);
+    font-family: var(--font-urdu);
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-normal);
+}
+
+.translate-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+body.dark-mode .translate-btn {
+    color: var(--color-text-main);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.translate-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    min-width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    list-style: none;
+    padding: 0.5rem 0;
+}
+
+.translate-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.translate-dropdown li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    text-align: right;
+    font-family: var(--font-urdu);
+    color: var(--color-text-main);
+}
+
+.translate-dropdown li:hover {
+    background: var(--color-primary-lightest);
+    color: var(--color-accent);
+}
+
+.translate-dropdown li.active {
+    font-weight: 700;
+    color: var(--color-accent);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.goog-te-gadget-simple {
+    background-color: var(--color-bg-white) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: 8px !important;
+    padding: 0.3rem 0.5rem !important;
+    font-family: var(--font-urdu) !important;
+    display: flex !important;
+    align-items: center !important;
+    transition: var(--transition-normal);
+}
+
+.goog-te-gadget-simple:hover {
+    border-color: var(--color-accent) !important;
+}
+
+body.dark-mode .goog-te-gadget-simple {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+.goog-te-menu-value {
+    color: var(--color-primary) !important;
+    font-weight: 500;
+}
+
+body.dark-mode .goog-te-menu-value {
+    color: var(--color-text-main) !important;
+}
+
+.goog-te-menu-value span {
+    color: var(--color-primary) !important;
+}
+
+body.dark-mode .goog-te-menu-value span {
+    color: var(--color-text-main) !important;
+}
+
+/* Hide the top Google Translate banner */
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+.skiptranslate>iframe.skiptranslate {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+#goog-gt-tt {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--color-accent);
+}
+
+body.dark-mode .theme-toggle-btn {
+    color: var(--color-text-main);
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+    color: var(--color-accent);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 80px;
+    background: linear-gradient(-45deg, #0A3A40, #125760, #1a4f57, #0d464d);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Floating animated elements for the background */
+.hero-bg::before,
+.hero-bg::after,
+.hero-shape {
+    content: '';
+    position: absolute;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 20s infinite linear;
+}
+
+.hero-bg::before {
+    width: 600px;
+    height: 600px;
+    top: -100px;
+    left: -100px;
+    animation-duration: 25s;
+}
+
+.hero-bg::after {
+    width: 500px;
+    height: 500px;
+    bottom: -50px;
+    right: -100px;
+    animation-duration: 20s;
+    animation-direction: reverse;
+}
+
+.hero-shape {
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+    animation: float 15s infinite ease-in-out alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) rotate(10deg) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) rotate(-5deg) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: var(--color-bg-main);
+    transform: skewY(-3deg);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    max-width: 800px;
+}
+
+.hero h1 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+}
+
+/* About Section */
+.lead-text {
+    font-size: 1.4rem;
+    color: var(--color-text-main);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Courses grid */
+.courses-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+    background: var(--color-bg-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+}
+
+.course-card .card-img {
+    height: 200px;
+    background-color: var(--color-primary-light);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.quran-img {
+    background-image: url('./images/quran.png');
+}
+
+.urdu-img {
+    background-image: url('./images/urdu.png');
+}
+
+.design-img {
+    background-image: url('./images/design.png');
+}
+
+.course-card .card-body {
+    padding: 2rem;
+    text-align: center;
+}
+
+.course-card p {
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    min-height: 50px;
+}
+
+/* Pricing Section */
+.pricing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.pricing-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    border: 1px solid var(--color-border);
+    position: relative;
+    transition: var(--transition-normal);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+}
+
+.pricing-card.featured {
+    background: var(--color-primary);
+    color: var(--color-bg-white);
+    transform: scale(1.05);
+    border: none;
+    box-shadow: var(--shadow-lg);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.popular-badge {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background: var(--color-accent);
+    color: var(--color-primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.pricing-card.featured h3 {
+    color: var(--color-bg-white);
+}
+
+.pricing-card .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    direction: ltr;
+    /* Handle numbers LTR */
+}
+
+.pricing-card.featured .price {
+    color: var(--color-bg-white);
+}
+
+.pricing-card .currency {
+    font-size: 1.2rem;
+    margin-right: 0.2rem;
+}
+
+.pricing-card .period {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    margin-left: 0.5rem;
+}
+
+.pricing-card.featured .period {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.pricing-card .usd-price {
+    font-size: 1.1rem;
+    color: var(--color-accent);
+    margin-bottom: 2rem;
+    direction: ltr;
+}
+
+.pricing-card.featured .usd-price {
+    color: var(--color-accent);
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 2rem;
+    text-align: right;
+}
+
+.pricing-features li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.pricing-features li i {
+    color: var(--color-accent);
+    font-size: 1.2rem;
+}
+
+body.dark-mode .pricing-card {
+    background: var(--color-bg-light);
+    border-color: var(--color-border);
+}
+
+body.dark-mode .pricing-card.featured {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* Marquee Specific (Moved to bottom) */
+
+.knowledge-card {
+    padding: 2.5rem 2rem;
+    border-top: 4px solid var(--color-primary);
+    text-align: center;
+}
+
+.knowledge-card h4 {
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.knowledge-card p {
+    font-size: 1.1rem;
+    color: var(--color-text-main);
+    line-height: 1.8;
+}
+
+/* Testimonials */
+.testimonials-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.testimonial-card {
+    padding: 2.5rem 2rem;
+    border-top: 4px solid var(--color-accent);
+}
+
+.quote-icon {
+    font-size: 2rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.feedback {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    color: var(--color-text-main);
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background: var(--color-primary-lightest);
+    color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.student-info h4 {
+    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+}
+
+.student-info span {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+/* Form Section */
+.pattern-bg {
+    background-color: var(--color-primary);
+    background-image: radial-gradient(var(--color-primary-light) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #fff;
+    position: relative;
+}
+
+.form-header h2 {
+    color: #fff;
+}
+
+.form-header p {
+    opacity: 0.8;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.registration-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+body.dark-mode .knowledge-card {
+    background: var(--color-bg-light);
+    border-top-color: var(--color-accent);
+}
+
+body.dark-mode .testimonial-card {
+    background: var(--color-bg-light);
+}
+
+.glass-form {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.col {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+select option {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+/* Footer Area */
+.footer {
+    background-color: #05262A;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 5rem 0 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: 1;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr;
+    gap: 3rem;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 3rem;
+}
+
+.footer-col h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-accent);
+}
+
+.footer-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo span {
+    color: var(--color-accent);
+}
+
+.footer-col.about-col p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.footer-col.links-col ul,
+.footer-col.contact-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col.links-col ul li,
+.footer-col.contact-col ul li {
+    margin-bottom: 1rem;
+}
+
+.footer-col.links-col ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition-short);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-col.links-col ul li a:hover {
+    color: var(--color-accent);
+    transform: translateX(-5px);
+    /* Moves left in RTL */
+}
+
+.footer-col.contact-col ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-col.contact-col ul li i {
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.footer .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    transition: var(--transition-normal);
+}
+
+.footer .social-links a:hover {
+    background: var(--color-accent);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Floating WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: var(--transition-normal);
+}
+
+/* In RTL, floating button looks better on the left to avoid overlapping scrollbars */
+html[dir="rtl"] .whatsapp-float {
+    left: 30px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+/* --- Animations & Responsiveness --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-up {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+/* Scroll Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--color-bg-white);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        box-shadow: var(--shadow-md);
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: all 0.4s ease;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .glass-form {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero {
+        padding-top: 100px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-col.links-col ul li a {
+        justify-content: center;
+    }
+
+    .footer-col.contact-col ul li {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-col h3::after {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+/* --- Marquee / Slider Styles --- */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 2rem 0;
+    margin-top: 1rem;
+    white-space: nowrap;
+}
+
+/* Fading edges for marquee */
+.marquee-container::before,
+.marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 10%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg-white) 0%, transparent 100%);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg-white) 0%, transparent 100%);
+}
+
+.bg-light .marquee-container::before {
+    background: linear-gradient(to right, var(--color-bg-white) 0%, transparent 100%);
+}
+
+.bg-light .marquee-container::after {
+    background: linear-gradient(to left, var(--color-bg-white) 0%, transparent 100%);
+}
+
+.bg-teal-light .marquee-container::before {
+    background: linear-gradient(to right, var(--color-primary-lightest) 0%, transparent 100%);
+}
+
+.bg-teal-light .marquee-container::after {
+    background: linear-gradient(to left, var(--color-primary-lightest) 0%, transparent 100%);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 150s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        /* Since dir="rtl", positive translation moves it right. 
+           We move it exactly 50% to show the duplicated set seamlessly. */
+        transform: translateX(50%);
+    }
+}
+
+/* Specific Card adjustments for Marquee */
+.knowledge-card,
+.testimonial-card {
+    width: 350px;
+    min-width: 350px;
+    white-space: normal;
+    flex-shrink: 0;
+    margin-left: 2rem;
+    /* Replaces grid gap for RTL marquee */
+}
+
+.knowledge-card {
+    padding: 2rem;
+    border-top: 4px solid var(--color-primary);
+    text-align: right;
+}
+
+.knowledge-card h4 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.knowledge-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* --- Scroll Progress Bar --- */
+.scroll-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    z-index: 1001;
+    /* Above navbar */
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: var(--color-accent);
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+/* --- Features Section (Why Choose Us) --- */
+.section-subtitle {
+    color: var(--color-text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+}
+
+.feature-card {
+    background: var(--color-bg-white);
+    padding: 2.5rem 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+    border-bottom: 4px solid transparent;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+    border-bottom-color: var(--color-accent);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--color-primary-lightest);
+    color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1.5rem;
+    transition: var(--transition-normal);
+}
+
+.feature-card:hover .feature-icon {
+    background: var(--color-primary);
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.feature-card p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+}
+
+/* --- FAQ Section --- */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--color-bg-white);
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: right;
+    padding: 1.5rem 2rem;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+    transition: var(--transition-normal);
+}
+
+body.dark-mode .faq-question {
+    color: var(--color-text-main);
+}
+
+.faq-question:hover {
+    color: var(--color-accent);
+}
+
+.faq-question i {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-item.active .faq-question {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background: var(--color-bg-white);
+}
+
+.faq-answer p {
+    padding: 1.5rem 2rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+/* --- Back to Top Button --- */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+html[dir="rtl"] .back-to-top {
+    right: auto;
+    left: 100px;
+    /* Offset from whatsapp button if on left */
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--color-accent);
+    transform: translateY(-5px);
+}
+</style>
+</head>
+
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgress"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="./images/logo png.jpg" alt="Rubaha's Academy Logo" class="logo-img">
+                <div class="logo-text-wrapper" dir="ltr">
+                    <span class="logo-text-en">Rubaha's Academy</span>
+                    <span class="logo-text-ur" dir="rtl">رباحاز اکیڈمی</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">تعارف</a></li>
+                <li><a href="#features">خصوصیات</a></li>
+                <li><a href="#courses">کورسز</a></li>
+                <li><a href="#testimonials">تاثرات</a></li>
+                <li><a href="#faq">سوالات</a></li>
+                <li><a href="#register" class="btn btn-outline">داخلہ لیں</a></li>
+                <li>
+                    <a href="https://facebook.com/105277485383727" target="_blank" class="social-icon"
+                        aria-label="Facebook">
+                        <i class="ph-fill ph-facebook-logo"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language Translator Container -->
+                <div class="custom-translate">
+                    <button id="translateBtn" class="translate-btn" aria-label="Select Language">
+                        <i class="ph ph-translate"></i>
+                        <span class="current-lang">اردو</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <ul id="translateDropdown" class="translate-dropdown">
+                        <li data-lang="ur" class="active">اردو (Urdu)</li>
+                        <li data-lang="en">English</li>
+                        <li data-lang="ar">العربية (Arabic)</li>
+                        <li data-lang="fa">فارسی (Farsi)</li>
+                        <li data-lang="fr">Français (French)</li>
+                        <li data-lang="es">Español (Spanish)</li>
+                        <li data-lang="pa">پنجابی (Punjabi)</li>
+                    </ul>
+                </div>
+                <!-- Hidden Google Translate Element -->
+                <div id="google_translate_element" style="display: none;"></div>
+
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="ph ph-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu"><i class="ph ph-list"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg">
+            <div class="hero-shape"></div>
+            <div class="hero-shape" style="top: 20%; left: 10%; width: 200px; height: 200px; animation-duration: 22s;">
+            </div>
+            <div class="hero-shape"
+                style="top: 70%; left: 80%; width: 300px; height: 300px; animation-duration: 18s; animation-direction: reverse;">
+            </div>
+        </div>
+        <div class="container hero-content">
+            <h1 class="animate-up">رباحاز اکیڈمی: علم و ہنر کا سنگم</h1>
+            <p class="animate-up delay-1">قرآنی تعلیمات، اردو ادب اور جدید ڈیجیٹل مہارتیں سیکھنے کا بہترین ادارہ۔</p>
+            <div class="hero-cta animate-up delay-2">
+                <a href="#register" class="btn btn-primary btn-large">ابھی داخلہ لیں</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2>تعارف</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="about-content text-center animate-on-scroll">
+                <p class="lead-text">
+                    رباحاز اکیڈمی ایک آن لائن تعلیمی ادارہ ہے جس کا بنیادی مقصد جدید ڈیجیٹل دور کے تقاضوں کو پورا کرتے
+                    ہوئے طالبات کو دینی اور دنیاوی علوم میں یکساں مہارت فراہم کرنا ہے۔ ہم اس بات پر پختہ یقین رکھتے ہیں
+                    کہ تعلیم ہی وہ واحد زیور ہے جو انسان کی شخصیت کو سنوارتا اور معاشرے کو ترقی کی راہ پر گامزن کرتا ہے۔
+                    <br><br>
+                    ہماری اکیڈمی میں قرآن پاک مع تجوید، اردو ادب کی نزاکتیں اور جدید گرافک ڈیزائننگ جیسے کورسز انتہائی
+                    قابل، محنتی اور مستند اساتذہ کی زیرِ نگرانی پڑھائے جاتے ہیں۔ ہماراطریقہ تدریس روایتی اصولوں اور جدید
+                    ٹیکنالوجی کا ایک حسین اور متوازن سنگم ہے، جس کی بدولت ہر طالب علم کو انفرادی توجہ ملتی ہے اور اس کے
+                    سیکھنے کے عمل کو مؤثر بنایا جاتا ہے۔
+                    <br><br>
+                    ہمارا نقطہ نظر صرف نصاب مکمل کروانا نہیں بلکہ طلباء کی ذہنی، روحانی اور پیشہ ورانہ تربیت کرنا ہے۔ آن
+                    لائن کلاسز کے ذریعے طالبات گھر بیٹھے، اپنی مرضی اور سہولت کے اوقات میں علم کی پیاس بجھا سکتی ہیں۔ ہم
+                    ایک ایسا محفوظ، پرسکون اور دوستانہ تعلیمی ماحول فراہم کرتے ہیں جہاں سوال پوچھنے اور سیکھنے کی مکمل
+                    آزادی ہے۔ آئیں، رباحاز اکیڈمی کے اس علمی کارواں کا حصہ بنیں اور اپنے روشن اور کامیاب مستقبل کی بنیاد
+                    رکھیں۔
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Islamic Knowledge Marquee Section -->
+    <section id="knowledge" class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2>دینی معلومات اور سنہری اقوال</h2>
+                <div class="divider"></div>
+            </div>
+        </div>
+        <div class="marquee-container animate-on-scroll">
+            <div class="marquee-track" id="knowledgeTrack">
+                <!-- Cards will be generated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section (Why Choose Us) -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2>ہمیں کیوں چنیں؟</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">رباحاز اکیڈمی ہی کیوں آپ کا پہلا انتخاب ہونی چاہیے؟</p>
+            </div>
+            <div class="grid features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="ph ph-chalkboard-teacher"></i></div>
+                    <h3>قابل اساتذہ</h3>
+                    <p>ہمارے پاس انتہائی تجربہ کار اور مستند اساتذہ کی ٹیم موجود ہے جو ہر طالب علم پر انفرادی توجہ دیتے
+                        ہیں۔</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card animate-on-scroll delay-1">
+                    <div class="feature-icon"><i class="ph ph-clock"></i></div>
+                    <h3>لچکدار اوقات</h3>
+                    <p>آن لائن کلاسز کی بدولت آپ اپنی سہولت کے مطابق وقت اور جگہ کا انتخاب کر سکتے ہیں۔</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card animate-on-scroll delay-2">
+                    <div class="feature-icon"><i class="ph ph-certificate"></i></div>
+                    <h3>سرٹیفائیڈ کورسز</h3>
+                    <p>کورس کی تکمیل پر تمام طالبات کو مستند اور قابل قبول سرٹیفکیٹ جاری کیے جاتے ہیں۔</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card animate-on-scroll delay-1">
+                    <div class="feature-icon"><i class="ph ph-device-mobile"></i></div>
+                    <h3>جدید طریقہ تدریس</h3>
+                    <p>آسان اور جدید ڈیجیٹل طریقہ تدریس، جس کے لیے صرف ایک موبائل فون یا لیپ ٹاپ کی ضرورت ہے۔</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2>ہمارے کورسز</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="grid courses-grid">
+                <!-- Course 1 -->
+                <div class="card course-card animate-on-scroll">
+                    <div class="card-img quran-img"></div>
+                    <div class="card-body">
+                        <h3>قرآن مع تجوید</h3>
+                        <p>قرآن پاک کو درست تلفظ اور تجوید کے اصولوں کے ساتھ پڑھنا سیکھیں۔</p>
+                        <a href="#register" class="btn btn-outline btn-full en-font">Enroll Now</a>
+                    </div>
+                </div>
+                <!-- Course 2 -->
+                <div class="card course-card animate-on-scroll delay-1">
+                    <div class="card-img urdu-img"></div>
+                    <div class="card-body">
+                        <h3>اردو ادب</h3>
+                        <p>اردو زبان کی نزاکتوں اور ادبی محاسن کو گہرائی سے جانیں۔</p>
+                        <a href="#register" class="btn btn-outline btn-full en-font">Enroll Now</a>
+                    </div>
+                </div>
+                <!-- Course 3 -->
+                <div class="card course-card animate-on-scroll delay-2">
+                    <div class="card-img design-img"></div>
+                    <div class="card-body">
+                        <h3>گرافک ڈیزائننگ و کمپیوٹر بیسکس</h3>
+                        <p>جدید ڈیجیٹل دور کی اہم مہارتیں سیکھیں اور خود مختار بنیں۔</p>
+                        <a href="#register" class="btn btn-outline btn-full en-font">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2>فیس کا شیڈول</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">انتہائی مناسب اور باکفایت فیس پلان</p>
+            </div>
+            <div class="grid pricing-grid">
+                <!-- Plan 1 -->
+                <div class="card pricing-card animate-on-scroll">
+                    <h3>کمپیوٹر بیسکس</h3>
+                    <div class="price">
+                        <span class="currency">Rs</span>5,000<span class="period">/ماہ</span>
+                    </div>
+                    <div class="usd-price">( $50 / Month )</div>
+                    <ul class="pricing-features">
+                        <li><i class="ph-fill ph-check-circle"></i>ایم ایس آفس مکمل کورس</li>
+                        <li><i class="ph-fill ph-check-circle"></i>عملی مشقیں اور اسائنمنٹس</li>
+                        <li><i class="ph-fill ph-check-circle"></i>سرٹیفکیٹ کی فراہمی</li>
+                    </ul>
+                    <a href="#register" class="btn btn-outline btn-full en-font">Enroll Now</a>
+                </div>
+                <!-- Plan 2 -->
+                <div class="card pricing-card featured animate-on-scroll delay-1">
+                    <div class="popular-badge">مقبول ترین</div>
+                    <h3>قرآن مع تجوید</h3>
+                    <div class="price">
+                        <span class="currency">Rs</span>10,000<span class="period">/ماہ</span>
+                    </div>
+                    <div class="usd-price">( $100 / Month )</div>
+                    <ul class="pricing-features">
+                        <li><i class="ph-fill ph-check-circle"></i>تجوید کے بنیادی اور ایڈوانس اصول</li>
+                        <li><i class="ph-fill ph-check-circle"></i>انفرادی کلاسز اور اساتذہ کی توجہ</li>
+                        <li><i class="ph-fill ph-check-circle"></i>آنلائن ٹیسٹ اور جائزے</li>
+                        <li><i class="ph-fill ph-check-circle"></i>سرٹیفکیٹ کی فراہمی</li>
+                    </ul>
+                    <a href="#register" class="btn btn-primary btn-full en-font">Enroll Now</a>
+                </div>
+                <!-- Plan 3 -->
+                <div class="card pricing-card animate-on-scroll delay-2">
+                    <h3>تفسیر کورس</h3>
+                    <div class="price">
+                        <span class="currency">Rs</span>15,000<span class="period">/ماہ</span>
+                    </div>
+                    <div class="usd-price">( $150 / Month )</div>
+                    <ul class="pricing-features">
+                        <li><i class="ph-fill ph-check-circle"></i>قرآن پاک کی جامع تفسیر</li>
+                        <li><i class="ph-fill ph-check-circle"></i>عربی گرامر کی بنیادی تفہیم</li>
+                        <li><i class="ph-fill ph-check-circle"></i>سرٹیفکیٹ کی فراہمی</li>
+                    </ul>
+                    <a href="#register" class="btn btn-outline btn-full en-font">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section bg-teal-light">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2>طلباء کے تاثرات</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="marquee-container animate-on-scroll">
+                <div class="marquee-track" id="reviewsTrack">
+                    <!-- Reviews will be generated via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2>اکثر پوچھے گئے سوالات</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">آپ کے ذہن میں موجود کچھ عام سوالات کے جوابات</p>
+            </div>
+            <div class="faq-container animate-on-scroll">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>کیا کلاسز کے اوقات لچکدار ہیں؟</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>جی ہاں، ہماری تمام کلاسز آن لائن ہیں، اس لیے ہم طالبات کی سہولت کو مدنظر رکھتے ہوئے لچکدار
+                            اوقات فراہم کرتے ہیں۔</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>کیا کورس مکمل کرنے پر سرٹیفکیٹ ملے گا؟</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>بالکل، ہر کورس کی کامیابی سے تکمیل پر طالبات کو رباحاز اکیڈمی کی جانب سے مستند سرٹیفکیٹ جاری
+                            کیا جائے گا۔</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>کلاسز کس پلیٹ فارم پر ہوتی ہیں؟</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>ہماری کلاسز عام طور پر زوم (Zoom) یا گوگل میٹ (Google Meet) پر منعقد کی جاتی ہیں، جو کہ
+                            استعمال میں بے حد آسان ہیں۔</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>داخلے کا طریقہ کار کیا ہے؟</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>داخلہ لینے کا طریقہ بہت آسان ہے۔ بس اسی پیج پر موجود آن لائن داخلہ فارم پر کریں اور ہماری ٹیم
+                            جلد ہی آپ سے رابطہ کرے گی۔</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="register" class="section pattern-bg">
+        <div class="container">
+            <div class="registration-wrapper animate-on-scroll">
+                <div class="form-header text-center">
+                    <h2>آن لائن داخلہ فارم</h2>
+                    <p>آج ہی ہمارے تعلیمی سفر کا حصہ بنیں</p>
+                </div>
+                <form id="registrationForm" class="glass-form">
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="fullName">مکمل نام</label>
+                            <input type="text" id="fullName" name="fullName" required
+                                placeholder="اپنا مکمل نام درج کریں">
+                        </div>
+                        <div class="col">
+                            <label for="fatherName">والد کا نام</label>
+                            <input type="text" id="fatherName" name="fatherName" required
+                                placeholder="والد کا نام درج کریں">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="whatsapp">واٹس ایپ نمبر</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" required
+                                placeholder="مثلاً: 1234567-300-92+">
+                        </div>
+                        <div class="col">
+                            <label for="qualification">تعلیمی قابلیت</label>
+                            <input type="text" id="qualification" name="qualification" required
+                                placeholder="اپنی آخری ڈگری درج کریں">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course">مطلوبہ کورس</label>
+                        <select id="course" name="course" required>
+                            <option value="" disabled selected>کورس کا انتخاب کریں...</option>
+                            <option value="quran">قرآن مع تجوید</option>
+                            <option value="urdu">اردو ادب</option>
+                            <option value="graphic">گرافک ڈیزائننگ</option>
+                            <option value="computer">کمپیوٹر بیسکس</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">آپ ہمارے بارے میں کیا جاننا چاہتے ہیں؟</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="اپنا پیغام یہاں لکھیں..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full btn-large">فارم جمع کروائیں</button>
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Column 1: About -->
+            <div class="footer-col about-col">
+                <div class="footer-logo">
+                    <img src="./images/logo png.jpg" alt="Rubaha's Academy Logo" class="logo-img">
+                    <div class="logo-text-wrapper" dir="ltr">
+                        <span class="logo-text-en">Rubaha's Academy</span>
+                        <span class="logo-text-ur" dir="rtl">رباحاز اکیڈمی</span>
+                    </div>
+                </div>
+                <p>قرآنی تعلیمات، اردو ادب اور جدید ڈیجیٹل مہارتیں سیکھنے کا بہترین اور مستند آنلائن ادارہ۔</p>
+                <div class="social-links mt-3">
+                    <a href="https://facebook.com/105277485383727" target="_blank" aria-label="Facebook">
+                        <i class="ph-fill ph-facebook-logo"></i>
+                    </a>
+                    <a href="https://wa.me/923136262321" target="_blank" aria-label="WhatsApp">
+                        <i class="ph-fill ph-whatsapp-logo"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col links-col">
+                <h3>اہم لنکس</h3>
+                <ul>
+                    <li><a href="#about"><i class="ph ph-caret-left"></i> تعارف</a></li>
+                    <li><a href="#courses"><i class="ph ph-caret-left"></i> کورسز</a></li>
+                    <li><a href="#pricing"><i class="ph ph-caret-left"></i> فیس کا شیڈول</a></li>
+                    <li><a href="#testimonials"><i class="ph ph-caret-left"></i> طالبات کے تاثرات</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact Info -->
+            <div class="footer-col contact-col">
+                <h3>رابطہ کریں</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="ph-fill ph-phone-call"></i>
+                        <a href="https://wa.me/923136262321" target="_blank"
+                            style="text-decoration: none; color: inherit;">
+                            <span class="en-font" style="direction: ltr; display: inline-block;">+92 313 6262321</span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="ph-fill ph-envelope-simple"></i>
+                        <a href="mailto:rubahasproductions@gmail.com" style="text-decoration: none; color: inherit;">
+                            <span class="en-font">rubahasproductions@gmail.com</span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="ph-fill ph-map-pin"></i>
+                        <span>آنلائن اکیڈمی (عالمی سطح پر)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p class="copyright en-font">&copy; 2026 Rubaha's Academy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923136262321" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="ph-fill ph-whatsapp-logo"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+        <i class="ph ph-arrow-up"></i>
+    </button>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Mobile Navigation Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const navIcon = mobileMenuBtn.querySelector('i');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        if (navLinks.classList.contains('active')) {
+            navIcon.classList.replace('ph-list', 'ph-x');
+        } else {
+            navIcon.classList.replace('ph-x', 'ph-list');
+        }
+    });
+
+    // Close mobile menu when a link is clicked
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            navIcon.classList.replace('ph-x', 'ph-list');
+        });
+    });
+
+    // 2. Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // 3. Scroll Animations (Intersection Observer)
+    const fadeElements = document.querySelectorAll('.animate-on-scroll');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    fadeElements.forEach(el => scrollObserver.observe(el));
+
+    // 4. Registration Form to WhatsApp Submission
+    const form = document.getElementById('registrationForm');
+    const formStatus = document.getElementById('formStatus');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+
+        submitBtn.textContent = 'براہ کرم انتظار کریں...';
+        submitBtn.disabled = true;
+
+        // Get Form Values
+        const fullName = document.getElementById('fullName').value;
+        const fatherName = document.getElementById('fatherName').value;
+        const whatsappNo = document.getElementById('whatsapp').value;
+        const qualification = document.getElementById('qualification').value;
+
+        const courseSelect = document.getElementById('course');
+        const course = courseSelect.options[courseSelect.selectedIndex].text;
+
+        const message = document.getElementById('message').value;
+
+        // Format Message for WhatsApp
+        let waMessage = `*رباحاز اکیڈمی - نیا داخلہ فارم*\n\n`;
+        waMessage += `*نام:* ${fullName}\n`;
+        waMessage += `*والد کا نام:* ${fatherName}\n`;
+        waMessage += `*واٹس ایپ نمبر:* ${whatsappNo}\n`;
+        waMessage += `*تعلیم:* ${qualification}\n`;
+        waMessage += `*کورس:* ${course}\n`;
+
+        if (message.trim() !== '') {
+            waMessage += `\n*پیغام:*\n${message}`;
+        }
+
+        // Encode message for URL
+        const encodedMessage = encodeURIComponent(waMessage);
+        const academyNumber = '923136262321';
+        const waUrl = `https://wa.me/${academyNumber}?text=${encodedMessage}`;
+
+        // Open WhatsApp
+        window.open(waUrl, '_blank');
+
+        // Reset and Show Success Status
+        setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            form.reset();
+            formStatus.innerHTML = '<p style="color: #25d366; text-align: center; margin-top: 1rem; font-weight: 600;">آپ کی درخواست کامیابی سے واٹس ایپ پر بھیج دی گئی ہے!</p>';
+
+            setTimeout(() => {
+                formStatus.innerHTML = '';
+            }, 5000);
+        }, 1000);
+    });
+
+    // 5. Populate Marquees (Islamic Knowledge & Reviews)
+    const knowledgeData = [
+        { title: 'قرآنی دعا', text: 'رَبِّ زِدْنِیْ عِلْمًا (اے میرے رب! میرے علم میں اضافہ فرما)' },
+        { title: 'حدیثِ نبویﷺ', text: 'تم میں سے بہترین وہ ہے جو قرآن سیکھے اور سکھائے۔' },
+        { title: 'علم کی فضیلت', text: 'علم حاصل کرنا ہر مسلمان مرد اور عورت پر فرض ہے۔' },
+        { title: 'تجوید کا اصول', text: 'حروف کو ان کے صحیح مخارج سے ادا کرنا تجوید کہلاتا ہے۔' },
+        { title: 'سنہری قول', text: 'وقت کی قدر کرو، کیونکہ جو وقت گزر گیا وہ کبھی لوٹ کر نہیں آتا۔' },
+        { title: 'قرآنی پیغام', text: 'بیشک اللہ صبر کرنے والوں کے ساتھ ہے۔' },
+        { title: 'حدیثِ نبویﷺ', text: 'دین آسان ہے، جو شخص دین میں سختی کرے گا، دین اس پر غالب آ جائے گا۔' },
+        { title: 'تفسیر کا نکتہ', text: 'سورۃ الفاتحہ کو ام الکتاب (کتاب کی ماں) کہا جاتا ہے۔' },
+        { title: 'اردو ادب', text: 'الفاظ وہ تیر ہیں جو کمان سے نکلیں تو واپس نہیں آتے۔ (واصف علی واصف)' },
+        { title: 'حکمت کی بات', text: 'جو شخص اپنے غصے پر قابو پاتا ہے، وہ سب سے بہادر ہے۔' },
+        { title: 'قرآنی دعا', text: 'رَبَّنَا آتِنَا فِی الدُّنْیَا حَسَنَةً وَّفِی الآخِرَةِ حَسَنَةً وَّقِنَا عَذَابَ النَّارِ' },
+        { title: 'حدیثِ نبویﷺ', text: 'مسلمان وہ ہے جس کی زبان اور ہاتھ سے دوسرے مسلمان محفوظ رہیں۔' },
+        { title: 'تجوید', text: 'غنہ ناک میں آواز چھپانے کو کہتے ہیں، اس کی مقدار دو حرکت ہوتی ہے۔' },
+        { title: 'سنہری قول', text: 'علم ایک ایسا خزانہ ہے جسے کوئی چور چرا نہیں سکتا۔' },
+        { title: 'اخلاقیات', text: 'راستے سے تکلیف دہ چیز ہٹانا بھی صدقہ ہے۔' },
+        { title: 'قرآنی پیغام', text: 'اور تم اپنے پروردگار کی کون کون سی نعمتوں کو جھٹلاؤ گے؟' },
+        { title: 'حدیثِ نبویﷺ', text: 'اعمال کا دارومدار نیتوں پر ہے۔' },
+        { title: 'اردو ادب', text: 'زندگی زندہ دلی کا نام ہے، مردہ دل کیا خاک جیا کرتے ہیں۔' },
+        { title: 'علم کی روشنی', text: 'اندھیرے کو کوسنے سے بہتر ہے کہ ایک شمع جلا دی جائے۔' },
+        { title: 'تفسیر', text: 'آیت الکرسی قرآن پاک کی سب سے عظیم آیت ہے۔' },
+        { title: 'اسلام کا پیغام', text: 'مسکرانا بھی ایک صدقہ ہے۔' },
+        { title: 'قرآنی اصول', text: 'بے شک مشکل کے ساتھ آسانی ہے۔' },
+        { title: 'حکمت', text: 'خاموشی غصے کا بہترین علاج ہے۔' },
+        { title: 'علامہ اقبال', text: 'خودی کو کر بلند اتنا کہ ہر تقدیر سے پہلے، خدا بندے سے خود پوچھے بتا تیری رضا کیا ہے۔' },
+        { title: 'قرآنی دعا', text: 'رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي' },
+        { title: 'حدیثِ نبویﷺ', text: 'سچائی نیکی کی طرف لے جاتی ہے اور نیکی جنت کی طرف۔' },
+        { title: 'ادب کا تقاضا', text: 'با ادب با نصیب، بے ادب بے نصیب۔' },
+        { title: 'تجوید کا اصول', text: 'اخفاء کا مطلب حرف کو غنہ کے ساتھ چھپا کر پڑھنا ہے۔' },
+        { title: 'سنہری قول', text: 'جو شخص علم کی تلاش میں نکلتا ہے، اللہ اس کے لیے جنت کا راستہ آسان کر دیتا ہے۔' },
+        { title: 'والدین کا مقام', text: 'جنت تمہاری ماؤں کے قدموں تلے ہے۔' },
+        { title: 'اخلاقیات', text: 'لوگوں کے ساتھ حسن اخلاق سے پیش آؤ۔' }
+    ];
+
+    const reviewsData = [
+        { name: 'سارہ احمد', course: 'طالبہ، قرآن مع تجوید', text: '"اکیڈمی کا پڑھانے کا انداز انتہائی شاندار ہے۔ اساتذہ بہت محنتی ہیں۔"', avatar: 'س' },
+        { name: 'زینب علی', course: 'طالبہ، گرافک ڈیزائننگ', text: '"میں نے یہاں سے گرافک ڈیزائننگ سیکھی۔ کورس کا مواد بہت عملی نوعیت کا ہے۔"', avatar: 'ز' },
+        { name: 'ام کلثوم', course: 'طالبہ، اردو ادب', text: '"اردو ادب کی کلاسز نے میری زبان دانی میں نکھار پیدا کیا ہے۔"', avatar: 'ا' },
+        { name: 'عائشہ خان', course: 'طالبہ، قرآن مع تجوید', text: '"تجوید کے قواعد بہت آسان طریقے سے سمجھائے جاتے ہیں۔"', avatar: 'ع' },
+        { name: 'فاطمہ نور', course: 'طالبہ، کمپیوٹر بیسکس', text: '"کمپیوٹر کی بنیادی مہارتیں سیکھ کر میرا اعتماد بہت بڑھ گیا ہے۔"', avatar: 'ف' },
+        { name: 'مریم شاہ', course: 'طالبہ، قرآن مع تجوید', text: '"ماحول بہت پرسکون ہے۔ کلاسز کا وقت بھی بہت مناسب ہے۔"', avatar: 'م' },
+        { name: 'خدیجہ طارق', course: 'طالبہ، گرافک ڈیزائننگ', text: '"اساتذہ ہر قدم پر رہنمائی کرتے ہیں۔ بہترین تجربہ رہا۔"', avatar: 'خ' },
+        { name: 'ثناء اقبال', course: 'طالبہ، اردو ادب', text: '"اردو شاعری اور نثر کو سمجھنے کا نیا زاویہ ملا۔"', avatar: 'ث' },
+        { name: 'ردا بتول', course: 'طالبہ، قرآن مع تجوید', text: '"میری تلاوت میں بہتری آئی ہے۔ الحمدللہ بہترین اکیڈمی ہے۔"', avatar: 'ر' },
+        { name: 'ہاجرہ بی بی', course: 'طالبہ، کمپیوٹر بیسکس', text: '"اب میں خود اپنا ڈیجیٹل کام آسانی سے کر لیتی ہوں۔"', avatar: 'ہ' },
+        { name: 'نادیہ علی', course: 'طالبہ، گرافک ڈیزائننگ', text: '"ڈیزائننگ کے جدید سافٹ ویئرز پر عبور حاصل ہوا۔"', avatar: 'ن' },
+        { name: 'میمونہ سلیم', course: 'طالبہ، قرآن مع تجوید', text: '"اساتذہ کی شفقت اور محنت قابلِ تعریف ہے۔"', avatar: 'م' },
+        { name: 'انعم ریاض', course: 'طالبہ، اردو ادب', text: '"اردو گرامر اور املاء کی غلطیاں درست ہوئیں۔"', avatar: 'ا' },
+        { name: 'بشریٰ حبیب', course: 'طالبہ، کمپیوٹر بیسکس', text: '"بہت ہی کم وقت میں بہت کچھ سیکھنے کو ملا۔"', avatar: 'ب' },
+        { name: 'سمیرا طاہر', course: 'طالبہ، گرافک ڈیزائننگ', text: '"فری لانسنگ کے حوالے سے بھی بہت اچھی ٹپس دی گئیں۔"', avatar: 'س' },
+        { name: 'عمارہ خان', course: 'طالبہ، قرآن مع تجوید', text: '"آن لائن حفظ کا تجربہ امید سے کہیں زیادہ بہتر رہا۔"', avatar: 'ع' },
+        { name: 'نورین مقصود', course: 'طالبہ، کمپیوٹر بیسکس', text: '"ایم ایس آفس اور ای میل کا درست استعمال سیکھ کر بہت خوش ہوں۔"', avatar: 'ن' },
+        { name: 'اقراء رحمان', course: 'طالبہ، اردو ادب', text: '"یہاں آکر مجھے غالب اور اقبال کو صحیح معنوں میں سمجھنے کا موقع ملا۔"', avatar: 'ا' },
+        { name: 'مبشرہ بتول', course: 'طالبہ، گرافک ڈیزائننگ', text: '"اسائنمنٹس اور پریکٹیکل کام نے مجھے ایک اچھا ڈیزائنر بننے میں مدد دی۔"', avatar: 'م' },
+        { name: 'روبینہ شاہین', course: 'طالبہ، قرآن مع تجوید', text: '"ہر روز نئی چیز سیکھنے کو ملتی ہے۔ اساتذہ کا اخلاق کمال ہے۔"', avatar: 'ر' },
+        { name: 'کلثوم اختر', course: 'طالبہ، اردو ادب', text: '"کورس ختم ہونے کے بعد بھی اساتذہ رہنمائی کے لیے موجود رہتے ہیں۔"', avatar: 'ک' },
+        { name: 'ہما قریشی', course: 'طالبہ، کمپیوٹر بیسکس', text: '"بیسک کانسیپٹس بہت واضح طریقے سے سمجھائے گئے۔"', avatar: 'ہ' },
+        { name: 'ثوبیہ نذیر', course: 'طالبہ، گرافک ڈیزائننگ', text: '"کورس کے بعد مجھے اپنا پہلا آن لائن آرڈر مل گیا۔ الحمدللہ!"', avatar: 'ث' },
+        { name: 'صوفیہ بیگم', course: 'طالبہ، قرآن مع تجوید', text: '"میری عمر 50 سال ہے، لیکن اساتذہ نے مجھے بہت پیار اور تحمل سے سکھایا۔"', avatar: 'ص' },
+        { name: 'زارا شیخ', course: 'طالبہ، گرافک ڈیزائننگ', text: '"میں نے کئی جگہ سے سیکھنے کی کوشش کی، مگر رباحاز اکیڈمی سب سے منفرد ہے۔"', avatar: 'ز' },
+        { name: 'عطیہ نور', course: 'طالبہ، اردو ادب', text: '"تلفظ کی درستی کے لیے یہ کورس ہر کسی کو کرنا چاہیے۔"', avatar: 'ع' },
+        { name: 'حلیمہ سعدیہ', course: 'طالبہ، کمپیوٹر بیسکس', text: '"غیر تکنیکی افراد کے لیے یہ کورس ایک نعمت سے کم نہیں۔"', avatar: 'ح' },
+        { name: 'طیبہ رحمان', course: 'طالبہ، قرآن مع تجوید', text: '"تجوید کے ساتھ روزانہ تلاوت کر کے دلی سکون ملتا ہے۔"', avatar: 'ط' },
+        { name: 'فرزانہ کوثر', course: 'طالبہ، گرافک ڈیزائننگ', text: '"کینوا اور فوٹوشاپ کے کورسز نہایت پروفیشنل اور اپڈیٹڈ ہیں۔"', avatar: 'ف' },
+        { name: 'شازیہ منظور', course: 'طالبہ، اردو ادب', text: '"طالبات پر انفرادی توجہ اس اکیڈمی کی سب سے بڑی خوبی ہے۔"', avatar: 'ش' }
+    ];
+
+    function renderMarquee(elementId, items, renderItemHTML) {
+        try {
+            const track = document.getElementById(elementId);
+            if (!track) {
+                console.warn(`Marquee element not found: ${elementId}`);
+                return;
+            }
+
+            let htmlContent = '';
+            items.forEach(item => {
+                htmlContent += renderItemHTML(item);
+            });
+
+            // Duplicate content for seamless infinite scrolling
+            track.innerHTML = htmlContent + htmlContent;
+            console.log(`Successfully rendered marquee: ${elementId}`);
+        } catch (e) {
+            console.error(`Error rendering marquee ${elementId}:`, e);
+        }
+    }
+
+    // Render Knowledge Posters
+    renderMarquee('knowledgeTrack', knowledgeData, (item) => `
+        <div class="card knowledge-card">
+            <h4>${item.title}</h4>
+            <p>${item.text}</p>
+        </div>
+    `);
+
+    // Render Reviews
+    renderMarquee('reviewsTrack', reviewsData, (item) => `
+        <div class="card testimonial-card">
+            <div class="quote-icon"><i class="ph-fill ph-quotes"></i></div>
+            <p class="feedback">${item.text}</p>
+            <div class="student-info">
+                <div class="avatar">${item.avatar}</div>
+                <div class="details">
+                    <h4 style="margin-bottom:0.2rem; font-size:1.1rem;">${item.name}</h4>
+                    <span style="font-size:0.85rem; color:var(--color-text-muted);">${item.course}</span>
+                </div>
+            </div>
+        </div>
+    `);
+
+    // 6. Theme Toggle (Dark/Light Mode)
+    try {
+        const themeToggleBtn = document.getElementById('themeToggle');
+        if (themeToggleBtn) {
+            const themeIcon = themeToggleBtn.querySelector('i');
+
+            // Check for saved theme preference
+            const currentTheme = localStorage.getItem('theme');
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                if (themeIcon) themeIcon.classList.replace('ph-moon', 'ph-sun');
+            }
+
+            themeToggleBtn.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+
+                let theme = 'light';
+                if (document.body.classList.contains('dark-mode')) {
+                    theme = 'dark';
+                    if (themeIcon) themeIcon.classList.replace('ph-moon', 'ph-sun');
+                } else {
+                    if (themeIcon) themeIcon.classList.replace('ph-sun', 'ph-moon');
+                }
+
+                // Save preference in local storage
+                localStorage.setItem('theme', theme);
+            });
+        }
+    } catch (e) {
+        console.error("Error setting up theme toggle:", e);
+    }
+
+    // Custom Translate Dropdown Logic
+    try {
+        const translateBtn = document.getElementById('translateBtn');
+        const translateDropdown = document.getElementById('translateDropdown');
+        if (translateBtn && translateDropdown) {
+            const langOptions = translateDropdown.querySelectorAll('li');
+            const currentLangSpan = translateBtn.querySelector('.current-lang');
+
+            // Toggle dropdown
+            translateBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                translateDropdown.classList.toggle('active');
+            });
+
+            // Close on outside click
+            document.addEventListener('click', () => {
+                translateDropdown.classList.remove('active');
+            });
+
+            // Handle language selection
+            langOptions.forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const langCode = option.getAttribute('data-lang');
+                    const langName = option.textContent.split(' ')[0];
+
+                    const domainStr = window.location.hostname && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' ? `; domain=${window.location.hostname}` : '';
+
+                    // Clear and set cookies
+                    if (langCode === 'ur') {
+                        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;${domainStr}`;
+                        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+                    } else {
+                        document.cookie = `googtrans=/ur/${langCode}; path=/;${domainStr}`;
+                        document.cookie = `googtrans=/ur/${langCode}; path=/;`;
+                    }
+
+                    // Save to local storage as fallback for file:// protocol
+                    localStorage.setItem('selectedLang', langCode);
+
+                    // Update UI immediately
+                    langOptions.forEach(opt => opt.classList.remove('active'));
+                    option.classList.add('active');
+                    currentLangSpan.textContent = langName;
+                    translateDropdown.classList.remove('active');
+
+                    // High-persistence trigger for local browsing
+                    let attempts = 0;
+                    const maxAttempts = 20; // Increased attempts
+
+                    const tryTranslate = () => {
+                        const gtSelect = document.querySelector('.goog-te-combo') || document.querySelector('select.goog-te-combo');
+                        if (gtSelect) {
+                            gtSelect.value = langCode === 'ur' ? '' : langCode;
+                            gtSelect.dispatchEvent(new Event('change'));
+                            console.log(`✅ Translation active: ${langCode}`);
+                        } else if (attempts < maxAttempts) {
+                            attempts++;
+                            console.log(`⌛ Attempt ${attempts}: Waiting for Google Translate (Slow on local files)...`);
+                            setTimeout(tryTranslate, 500); // 500ms intervals
+                        } else {
+                            console.warn("❌ Translation failed to load locally.");
+                            // If it's a first time, it might need one reload
+                            if (!sessionStorage.getItem('reloaded_once')) {
+                                sessionStorage.setItem('reloaded_once', 'true');
+                                window.location.reload();
+                            }
+                        }
+                    };
+
+                    tryTranslate();
+                });
+            });
+
+            // Check acting language on load
+            const getCookie = (name) => {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            };
+
+            const googtrans = getCookie('googtrans') || localStorage.getItem('selectedLang');
+            const activeLang = (googtrans && googtrans.includes('/ur/')) ? googtrans.split('/').pop() :
+                (googtrans && googtrans.length <= 3 ? googtrans : 'ur');
+
+            if (activeLang && activeLang !== 'ur') {
+                langOptions.forEach(opt => {
+                    if (opt.getAttribute('data-lang') === activeLang) {
+                        opt.classList.add('active');
+                        currentLangSpan.textContent = opt.textContent.split(' ')[0];
+                    } else {
+                        opt.classList.remove('active');
+                    }
+                });
+            } else {
+                const defaultOpt = translateDropdown.querySelector('[data-lang="ur"]');
+                if (defaultOpt) {
+                    defaultOpt.classList.add('active');
+                    currentLangSpan.textContent = defaultOpt.textContent.split(' ')[0];
+                }
+            }
+        }
+    } catch (e) {
+        console.error("Error setting up translate dropdown:", e);
+    }
+
+    // 7. Scroll Progress Bar & Back to Top Button
+    const scrollProgress = document.getElementById('scrollProgress');
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+        // Scroll Progress
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        scrollProgress.style.width = scrolled + '%';
+
+        // Back to Top Button Visibility
+        if (winScroll > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // 8. FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const questionBtn = item.querySelector('.faq-question');
+
+        questionBtn.addEventListener('click', () => {
+            // Close other items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                }
+            });
+
+            // Toggle current item
+            item.classList.toggle('active');
+            const answer = item.querySelector('.faq-answer');
+
+            if (item.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            } else {
+                answer.style.maxHeight = null;
+            }
+        });
+    });
+});
+
+</script>
+</body>
+
+</html>
