@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubaha's Academy | رباحاز اکیڈمی</title>
+    <meta name="description"
+        content="رباحاز اکیڈمی: قرآنی تعلیمات، اردو ادب اور جدید ڈیجیٹل مہارتیں سیکھنے کا بہترین ادارہ۔">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons for elegant vectors -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            try {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'ur',
+                    includedLanguages: 'ur,en,ar,fa,es,pa,fr',
+                    autoDisplay: false
+                }, 'google_translate_element');
+
+                // Fallback for local files: Try to trigger saved language
+                const savedLang = localStorage.getItem('selectedLang');
+                if (savedLang && savedLang !== 'ur') {
+                    let attempts = 0;
+                    const checkWidget = setInterval(() => {
+                        const gtSelect = document.querySelector('.goog-te-combo');
+                        if (gtSelect) {
+                            gtSelect.value = savedLang;
+                            gtSelect.dispatchEvent(new Event('change'));
+                            clearInterval(checkWidget);
+                        }
+                        if (attempts++ > 20) clearInterval(checkWidget);
+                    }, 500);
+                }
+            } catch (err) {
+                console.warn("Google Translate Error:", err);
+            }
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgress"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="images/logo png.jpg" alt="Rubaha's Academy Logo" class="logo-img">
+                <div class="logo-text-wrapper" dir="ltr">
+                    <span class="logo-text-en">Rubaha's Academy</span>
+                    <span class="logo-text-ur" dir="rtl">رباحاز اکیڈمی</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">تعارف</a></li>
+                <li><a href="#features">خصوصیات</a></li>
+                <li><a href="#courses">کورسز</a></li>
+                <li><a href="#testimonials">تاثرات</a></li>
+                <li><a href="#faq">سوالات</a></li>
+                <li><a href="#register" class="btn btn-outline">داخلہ لیں</a></li>
+                <li>
+                    <a href="https://facebook.com/105277485383727" target="_blank" class="social-icon"
+                        aria-label="Facebook">
+                        <i class="ph-fill ph-facebook-logo"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <!-- Language Translator Container -->
+                <div class="custom-translate">
+                    <button id="translateBtn" class="translate-btn" aria-label="Select Language">
+                        <i class="ph ph-translate"></i>
+                        <span class="current-lang">اردو</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <ul id="translateDropdown" class="translate-dropdown">
+                        <li data-lang="ur" class="active">اردو (Urdu)</li>
+                        <li data-lang="en">English</li>
+                        <li data-lang="ar">العربية (Arabic)</li>
+                        <li data-lang="fa">فارسی (Farsi)</li>
+                        <li data-lang="fr">Français (French)</li>
+                        <li data-lang="es">Español (Spanish)</li>
+                        <li data-lang="pa">پنجابی (Punjabi)</li>
+                    </ul>
+                </div>
+                <!-- Hidden Google Translate Element -->
+                <div id="google_translate_element" style="display: none;"></div>
+
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="ph ph-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu"><i class="ph ph-list"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg">
+            <div class="hero-shape"></div>
+            <div class="hero-shape" style="top: 20%; left: 10%; width: 200px; height: 200px; animation-duration: 22s;">
+            </div>
+            <div class="hero-shape"
+                style="top: 70%; left: 80%; width: 300px; height: 300px; animation-duration: 18s; animation-direction: reverse;">
+            </div>
+        </div>
+        <div class="container hero-content">
+            <h1 class="animate-up">رباحاز اکیڈمی: علم و ہنر کا سنگم</h1>
+            <p class="animate-up delay-1">قرآنی تعلیمات، اردو ادب اور جدید ڈیجیٹل مہارتیں سیکھنے کا بہترین ادارہ۔</p>
+            <div class="hero-cta animate-up delay-2">
+                <a href="#register" class="btn btn-primary btn-large">ابھی داخلہ لیں</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2>تعارف</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="about-content text-center animate-on-scroll">
+                <p class="lead-text">
+                    رباحاز اکیڈمی ایک آن لائن تعلیمی ادارہ ہے جس کا بنیادی مقصد جدید ڈیجیٹل دور کے تقاضوں کو پورا کرتے
+                    ہوئے طالبات کو دینی اور دنیاوی علوم میں یکساں مہارت فراہم کرنا ہے۔ ہم اس بات پر پختہ یقین رکھتے ہیں
+                    کہ تعلیم ہی وہ واحد زیور ہے جو انسان کی شخصیت کو سنوارتا اور معاشرے کو ترقی کی راہ پر گامزن کرتا ہے۔
+                    <br><br>
+                    ہماری اکیڈمی میں قرآن پاک مع تجوید، اردو ادب کی نزاکتیں اور جدید گرافک ڈیزائننگ جیسے کورسز انتہائی
+                    قابل، محنتی اور مستند اساتذہ کی زیرِ نگرانی پڑھائے جاتے ہیں۔ ہماراطریقہ تدریس روایتی اصولوں اور جدید
+                    ٹیکنالوجی کا ایک حسین اور متوازن سنگم ہے، جس کی بدولت ہر طالب علم کو انفرادی توجہ ملتی ہے اور اس کے
+                    سیکھنے کے عمل کو مؤثر بنایا جاتا ہے۔
+                    <br><br>
+                    ہمارا نقطہ نظر صرف نصاب مکمل کروانا نہیں بلکہ طلباء کی ذہنی، روحانی اور پیشہ ورانہ تربیت کرنا ہے۔ آن
+                    لائن کلاسز کے ذریعے طالبات گھر بیٹھے، اپنی مرضی اور سہولت کے اوقات میں علم کی پیاس بجھا سکتی ہیں۔ ہم
+                    ایک ایسا محفوظ، پرسکون اور دوستانہ تعلیمی ماحول فراہم کرتے ہیں جہاں سوال پوچھنے اور سیکھنے کی مکمل
+                    آزادی ہے۔ آئیں، رباحاز اکیڈمی کے اس علمی کارواں کا حصہ بنیں اور اپنے روشن اور کامیاب مستقبل کی بنیاد
+                    رکھیں۔
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Islamic Knowledge Marquee Section -->
+    <section id="knowledge" class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2>دینی معلومات اور سنہری اقوال</h2>
+                <div class="divider"></div>
+            </div>
+        </div>
+        <div class="marquee-container animate-on-scroll">
+            <div class="marquee-track" id="knowledgeTrack">
+                <!-- Cards will be generated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section (Why Choose Us) -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2>ہمیں کیوں چنیں؟</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">رباحاز اکیڈمی ہی کیوں آپ کا پہلا انتخاب ہونی چاہیے؟</p>
+            </div>
+            <div class="grid features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="ph ph-chalkboard-teacher"></i></div>
+                    <h3>قابل اساتذہ</h3>
+                    <p>ہمارے پاس انتہائی تجربہ کار اور مستند اساتذہ کی ٹیم موجود ہے جو ہر طالب علم پر انفرادی توجہ دیتے
+                        ہیں۔</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card animate-on-scroll delay-1">
+                    <div class="feature-icon"><i class="ph ph-clock"></i></div>
+                    <h3>لچکدار اوقات</h3>
+                    <p>آن لائن کلاسز کی بدولت آپ اپنی سہولت کے مطابق وقت اور جگہ کا انتخاب کر سکتے ہیں۔</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card animate-on-scroll delay-2">
+                    <div class="feature-icon"><i class="ph ph-certificate"></i></div>
+                    <h3>سرٹیفائیڈ کورسز</h3>
+                    <p>کورس کی تکمیل پر تمام طالبات کو مستند اور قابل قبول سرٹیفکیٹ جاری کیے جاتے ہیں۔</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card animate-on-scroll delay-1">
+                    <div class="feature-icon"><i class="ph ph-device-mobile"></i></div>
+                    <h3>جدید طریقہ تدریس</h3>
+                    <p>آسان اور جدید ڈیجیٹل طریقہ تدریس، جس کے لیے صرف ایک موبائل فون یا لیپ ٹاپ کی ضرورت ہے۔</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2>ہمارے کورسز</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="grid courses-grid">
+                <!-- Course 1 -->
+                <div class="card course-card animate-on-scroll">
+                    <div class="card-img quran-img"></div>
+                    <div class="card-body">
+                        <h3>قرآن مع تجوید</h3>
+                        <p>قرآن پاک کو درست تلفظ اور تجوید کے اصولوں کے ساتھ پڑھنا سیکھیں۔</p>
+                        <a href="#register" class="btn btn-outline btn-full en-font">Enroll Now</a>
+                    </div>
+                </div>
+                <!-- Course 2 -->
+                <div class="card course-card animate-on-scroll delay-1">
+                    <div class="card-img urdu-img"></div>
+                    <div class="card-body">
+                        <h3>اردو ادب</h3>
+                        <p>اردو زبان کی نزاکتوں اور ادبی محاسن کو گہرائی سے جانیں۔</p>
+                        <a href="#register" class="btn btn-outline btn-full en-font">Enroll Now</a>
+                    </div>
+                </div>
+                <!-- Course 3 -->
+                <div class="card course-card animate-on-scroll delay-2">
+                    <div class="card-img design-img"></div>
+                    <div class="card-body">
+                        <h3>گرافک ڈیزائننگ و کمپیوٹر بیسکس</h3>
+                        <p>جدید ڈیجیٹل دور کی اہم مہارتیں سیکھیں اور خود مختار بنیں۔</p>
+                        <a href="#register" class="btn btn-outline btn-full en-font">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2>فیس کا شیڈول</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">انتہائی مناسب اور باکفایت فیس پلان</p>
+            </div>
+            <div class="grid pricing-grid">
+                <!-- Plan 1 -->
+                <div class="card pricing-card animate-on-scroll">
+                    <h3>کمپیوٹر بیسکس</h3>
+                    <div class="price">
+                        <span class="currency">Rs</span>5,000<span class="period">/ماہ</span>
+                    </div>
+                    <div class="usd-price">( $50 / Month )</div>
+                    <ul class="pricing-features">
+                        <li><i class="ph-fill ph-check-circle"></i>ایم ایس آفس مکمل کورس</li>
+                        <li><i class="ph-fill ph-check-circle"></i>عملی مشقیں اور اسائنمنٹس</li>
+                        <li><i class="ph-fill ph-check-circle"></i>سرٹیفکیٹ کی فراہمی</li>
+                    </ul>
+                    <a href="#register" class="btn btn-outline btn-full en-font">Enroll Now</a>
+                </div>
+                <!-- Plan 2 -->
+                <div class="card pricing-card featured animate-on-scroll delay-1">
+                    <div class="popular-badge">مقبول ترین</div>
+                    <h3>قرآن مع تجوید</h3>
+                    <div class="price">
+                        <span class="currency">Rs</span>10,000<span class="period">/ماہ</span>
+                    </div>
+                    <div class="usd-price">( $100 / Month )</div>
+                    <ul class="pricing-features">
+                        <li><i class="ph-fill ph-check-circle"></i>تجوید کے بنیادی اور ایڈوانس اصول</li>
+                        <li><i class="ph-fill ph-check-circle"></i>انفرادی کلاسز اور اساتذہ کی توجہ</li>
+                        <li><i class="ph-fill ph-check-circle"></i>آنلائن ٹیسٹ اور جائزے</li>
+                        <li><i class="ph-fill ph-check-circle"></i>سرٹیفکیٹ کی فراہمی</li>
+                    </ul>
+                    <a href="#register" class="btn btn-primary btn-full en-font">Enroll Now</a>
+                </div>
+                <!-- Plan 3 -->
+                <div class="card pricing-card animate-on-scroll delay-2">
+                    <h3>تفسیر کورس</h3>
+                    <div class="price">
+                        <span class="currency">Rs</span>15,000<span class="period">/ماہ</span>
+                    </div>
+                    <div class="usd-price">( $150 / Month )</div>
+                    <ul class="pricing-features">
+                        <li><i class="ph-fill ph-check-circle"></i>قرآن پاک کی جامع تفسیر</li>
+                        <li><i class="ph-fill ph-check-circle"></i>عربی گرامر کی بنیادی تفہیم</li>
+                        <li><i class="ph-fill ph-check-circle"></i>سرٹیفکیٹ کی فراہمی</li>
+                    </ul>
+                    <a href="#register" class="btn btn-outline btn-full en-font">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section bg-teal-light">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2>طلباء کے تاثرات</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="marquee-container animate-on-scroll">
+                <div class="marquee-track" id="reviewsTrack">
+                    <!-- Reviews will be generated via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2>اکثر پوچھے گئے سوالات</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">آپ کے ذہن میں موجود کچھ عام سوالات کے جوابات</p>
+            </div>
+            <div class="faq-container animate-on-scroll">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>کیا کلاسز کے اوقات لچکدار ہیں؟</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>جی ہاں، ہماری تمام کلاسز آن لائن ہیں، اس لیے ہم طالبات کی سہولت کو مدنظر رکھتے ہوئے لچکدار
+                            اوقات فراہم کرتے ہیں۔</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>کیا کورس مکمل کرنے پر سرٹیفکیٹ ملے گا؟</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>بالکل، ہر کورس کی کامیابی سے تکمیل پر طالبات کو رباحاز اکیڈمی کی جانب سے مستند سرٹیفکیٹ جاری
+                            کیا جائے گا۔</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>کلاسز کس پلیٹ فارم پر ہوتی ہیں؟</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>ہماری کلاسز عام طور پر زوم (Zoom) یا گوگل میٹ (Google Meet) پر منعقد کی جاتی ہیں، جو کہ
+                            استعمال میں بے حد آسان ہیں۔</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>داخلے کا طریقہ کار کیا ہے؟</span>
+                        <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>داخلہ لینے کا طریقہ بہت آسان ہے۔ بس اسی پیج پر موجود آن لائن داخلہ فارم پر کریں اور ہماری ٹیم
+                            جلد ہی آپ سے رابطہ کرے گی۔</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="register" class="section pattern-bg">
+        <div class="container">
+            <div class="registration-wrapper animate-on-scroll">
+                <div class="form-header text-center">
+                    <h2>آن لائن داخلہ فارم</h2>
+                    <p>آج ہی ہمارے تعلیمی سفر کا حصہ بنیں</p>
+                </div>
+                <form id="registrationForm" class="glass-form">
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="fullName">مکمل نام</label>
+                            <input type="text" id="fullName" name="fullName" required
+                                placeholder="اپنا مکمل نام درج کریں">
+                        </div>
+                        <div class="col">
+                            <label for="fatherName">والد کا نام</label>
+                            <input type="text" id="fatherName" name="fatherName" required
+                                placeholder="والد کا نام درج کریں">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="whatsapp">واٹس ایپ نمبر</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" required
+                                placeholder="مثلاً: 1234567-300-92+">
+                        </div>
+                        <div class="col">
+                            <label for="qualification">تعلیمی قابلیت</label>
+                            <input type="text" id="qualification" name="qualification" required
+                                placeholder="اپنی آخری ڈگری درج کریں">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course">مطلوبہ کورس</label>
+                        <select id="course" name="course" required>
+                            <option value="" disabled selected>کورس کا انتخاب کریں...</option>
+                            <option value="quran">قرآن مع تجوید</option>
+                            <option value="urdu">اردو ادب</option>
+                            <option value="graphic">گرافک ڈیزائننگ</option>
+                            <option value="computer">کمپیوٹر بیسکس</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">آپ ہمارے بارے میں کیا جاننا چاہتے ہیں؟</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="اپنا پیغام یہاں لکھیں..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full btn-large">فارم جمع کروائیں</button>
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Column 1: About -->
+            <div class="footer-col about-col">
+                <div class="footer-logo">
+                    <img src="images/logo png.jpg" alt="Rubaha's Academy Logo" class="logo-img">
+                    <div class="logo-text-wrapper" dir="ltr">
+                        <span class="logo-text-en">Rubaha's Academy</span>
+                        <span class="logo-text-ur" dir="rtl">رباحاز اکیڈمی</span>
+                    </div>
+                </div>
+                <p>قرآنی تعلیمات، اردو ادب اور جدید ڈیجیٹل مہارتیں سیکھنے کا بہترین اور مستند آنلائن ادارہ۔</p>
+                <div class="social-links mt-3">
+                    <a href="https://facebook.com/105277485383727" target="_blank" aria-label="Facebook">
+                        <i class="ph-fill ph-facebook-logo"></i>
+                    </a>
+                    <a href="https://wa.me/923136262321" target="_blank" aria-label="WhatsApp">
+                        <i class="ph-fill ph-whatsapp-logo"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col links-col">
+                <h3>اہم لنکس</h3>
+                <ul>
+                    <li><a href="#about"><i class="ph ph-caret-left"></i> تعارف</a></li>
+                    <li><a href="#courses"><i class="ph ph-caret-left"></i> کورسز</a></li>
+                    <li><a href="#pricing"><i class="ph ph-caret-left"></i> فیس کا شیڈول</a></li>
+                    <li><a href="#testimonials"><i class="ph ph-caret-left"></i> طالبات کے تاثرات</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact Info -->
+            <div class="footer-col contact-col">
+                <h3>رابطہ کریں</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="ph-fill ph-phone-call"></i>
+                        <a href="https://wa.me/923136262321" target="_blank"
+                            style="text-decoration: none; color: inherit;">
+                            <span class="en-font" style="direction: ltr; display: inline-block;">+92 313 6262321</span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="ph-fill ph-envelope-simple"></i>
+                        <a href="mailto:rubahasproductions@gmail.com" style="text-decoration: none; color: inherit;">
+                            <span class="en-font">rubahasproductions@gmail.com</span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="ph-fill ph-map-pin"></i>
+                        <span>آنلائن اکیڈمی (عالمی سطح پر)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p class="copyright en-font">&copy; 2026 Rubaha's Academy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923136262321" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="ph-fill ph-whatsapp-logo"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+        <i class="ph ph-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
